@@ -3,18 +3,36 @@ import { createFrames, Button } from "frames.js/next";
 import data from "../../data.json";
 const frames = createFrames();
 const handleRequest = frames(async (ctx) => {
-    const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"
-        }/frames?value=`;
+    console.log({ ctx });
+    const baseUrl = `${
+        process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"
+    }/frames?value=`;
     return {
-        image: (<span>{data.options.title}</span>),
-        buttons: [
-            <Button action="post" target="https://google.com">
-                {data.options.button1}
-            </Button>,
-            <Button action="post" target={`${baseUrl}sell`}>
-                {data.options.button2}
-            </Button>,
-        ],
+        image: (
+            <span>
+                {data[Number(ctx?.searchParams?.state ?? 0)].title} STATE=
+                {ctx?.searchParams?.state ?? 0}
+            </span>
+        ),
+        buttons: data[Number(ctx?.searchParams?.state ?? 0)].button2
+            ? [
+                  <Button action="post" target={`${baseUrl}create&state=${1}`}>
+                      {data[Number(ctx?.searchParams?.state ?? 0)].button1}
+                  </Button>,
+                  <Button action="post" target={`${baseUrl}sell&state=${2}`}>
+                      {data[Number(ctx?.searchParams?.state ?? 0)].button2}
+                  </Button>,
+              ]
+            : [
+                  <Button
+                      action="post"
+                      target={`${baseUrl}create&state=${
+                          Number(ctx?.searchParams?.state ?? 0) + 1
+                      }`}
+                  >
+                      {data[Number(ctx?.searchParams?.state ?? 0)].button1}
+                  </Button>,
+              ],
     };
 });
 
