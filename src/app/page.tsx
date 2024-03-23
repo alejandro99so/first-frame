@@ -14,7 +14,7 @@ const generateMetadata = async () => {
     return {
         title: "My Page",
         // provide a full URL to your /frames endpoint
-        ...(await fetchMetadata("https://119f7fa195a9.ngrok.app" + "/frames")),
+        ...(await fetchMetadata(process.env.NEXT_PUBLIC_BASE_URL + "/frames")),
     };
 };
 
