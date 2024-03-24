@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    images: {
+        domains: ['ipfs.io'], // Reemplaza 'example.com' con el dominio de tu imagen
+    },
     // Can be safely removed in newer versions of Next.js
     future: {
 

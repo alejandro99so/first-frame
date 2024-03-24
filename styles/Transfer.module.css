@@ -1,0 +1,39 @@
+.transfer_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(35, 32, 53);
+    padding: 1rem;
+    color: white;
+    height: 5rem;
+}
+
+.transfer_body {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5rem);
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.transfer_carrousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.transfer_carrousel_nft {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.transfer_carrousel_nft button {
+    background-color: rgb(178, 219, 205);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
