@@ -1,23 +1,27 @@
-[
-  {
-    "title": "Hello my friends, what you want to do Today?",
+{
+  "options": {
+    "title": "Select what you want to do",
     "button1": "Create NFT",
     "button2": "Sell NFT"
   },
-  {
-    "title": "Enter the name of the nft",
+  "create1": {
+    "title": "Name of the nft",
     "button1": "Next"
   },
-  {
-    "title": "Enter the url of the nft image",
+  "create2": {
+    "title": "Description of the nft image",
     "button1": "Next"
   },
-  {
-    "title": "Enter the price of the nft",
+  "create3": {
+    "title": "Image of the nft",
     "button1": "Next"
   },
-  {
-    "title": "Enter the name of the nft",
+  "create4": {
+    "title": "Value of the nft",
+    "button1": "Next"
+  },
+  "create5": {
+    "title": "Type of the nft",
     "button1": "Next"
   }
-]
+}
