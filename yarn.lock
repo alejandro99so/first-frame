@@ -10635,7 +10635,7 @@ viem@^1.12.2:
     isows "1.0.3"
     ws "8.13.0"
 
-"viem@^1.16.6 || ^2.1.1", "viem@^1.19.13 || ^2.2.0", viem@^2.7.14, viem@^2.7.8, viem@2.x:
+"viem@^1.16.6 || ^2.1.1", "viem@^1.19.13 || ^2.2.0", viem@^2.7.14, viem@^2.7.8, viem@^2.8.18, viem@2.x:
   version "2.8.18"
   resolved "https://registry.npmjs.org/viem/-/viem-2.8.18.tgz"
   integrity sha512-Kq3kwkKziJ8rQeLkmdbSLheHDnA+tx2EdLKLmQ3N4FVtjKYjBP9tPL1r+fI6KltVUM1TDOhIHOdslDSp57VMMg==
