@@ -25,11 +25,12 @@ let inputsValues = {
 
 const handleRequest = frames(async (ctx) => {
 
-    const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "localhost:3000"}/frames?value=`;
+    const url = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseUrl = `${url || "localhost:3000"}/frames?value=`;
 
     let nextStates = {};
     const totalStates = Object.keys(stateMap).length;
-    const currentStateIndex = Number(ctx?.searchParams?.state ?? 0);
+    let currentStateIndex = Number(ctx?.searchParams?.state ?? 0);
 
     const stateKey = stateMap[Number(ctx?.searchParams?.state ?? 0)];
     const currentStateData = data[stateKey];
@@ -57,6 +58,7 @@ const handleRequest = frames(async (ctx) => {
     console.log("Valores de los inputs:", inputsValues);
 
     if (stateKey === 'options') {
+        textInputValue = 0
         nextStates = {
             create: "1"
         };
@@ -89,7 +91,7 @@ const handleRequest = frames(async (ctx) => {
             currentStateData.button2 && (
                 <Button
                     action="link"
-                    target={`https://73b39f3b2003.ngrok.app/transfer`}
+                    target={`${url}/transfer`}
                 >
                     {currentStateData.button2}
                 </Button>
